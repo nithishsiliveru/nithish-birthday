@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spider-Man's 23rd Birthday</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-y: auto;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            position: relative;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, .35),
+                    rgba(0, 0, 0, .70)),
+                url('https://img.sanishtech.com/u/5f18786452076854183e87abb5955e78.jpg');
+
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Floating web particles */
+        .particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            opacity: .5;
+            pointer-events: none;
+            animation: float 12s linear infinite;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: .7;
+            }
+
+            80% {
+                opacity: .7;
+            }
+
+            to {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        .p1 {
+            left: 8%;
+            animation-delay: 0s;
+        }
+
+        .p2 {
+            left: 18%;
+            animation-delay: 2s;
+        }
+
+        .p3 {
+            left: 30%;
+            animation-delay: 5s;
+        }
+
+        .p4 {
+            left: 42%;
+            animation-delay: 1s;
+        }
+
+        .p5 {
+            left: 55%;
+            animation-delay: 7s;
+        }
+
+        .p6 {
+            left: 68%;
+            animation-delay: 3s;
+        }
+
+        .p7 {
+            left: 80%;
+            animation-delay: 6s;
+        }
+
+        .p8 {
+            left: 92%;
+            animation-delay: 4s;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 40px 20px 80px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+
+        .breaking {
+            display: inline-block;
+
+            padding: 12px 22px;
+            margin-bottom: 24px;
+
+            border-radius: 14px;
+
+            background: rgba(255, 255, 255, 0.05);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+
+            color: white;
+
+            text-shadow:
+                0 0 8px rgba(255, 255, 255, .35);
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, .25);
+        }
+
+
+
+        .breaking:hover {
+            transform: translateY(-2px);
+            transition: .2s ease;
+        }
+
+        .spider {
+            font-size: 90px;
+            animation: swing 3s ease-in-out infinite;
+            transform-origin: top center;
+        }
+
+        @keyframes swing {
+            0% {
+                transform: rotate(-8deg);
+            }
+
+            50% {
+                transform: rotate(8deg);
+            }
+
+            100% {
+                transform: rotate(-8deg);
+            }
+        }
+
+        h1 {
+            font-family: 'Bangers', cursive;
+            font-size: 4rem;
+            color: #ffffff;
+            letter-spacing: 3px;
+            margin-top: 10px;
+
+            text-shadow:
+                0 0 10px rgba(255, 0, 0, .8),
+                0 0 25px rgba(255, 0, 0, .6),
+                0 0 40px rgba(255, 0, 0, .4);
+        }
+
+        .subtitle {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #dce8ff;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            background: #cf2027;
+            font-weight: 700;
+            box-shadow: 0 0 25px rgba(207, 32, 39, .5);
+        }
+
+        .hero-quote {
+            max-width: 700px;
+            margin: 25px auto;
+            font-size: 1.1rem;
+            color: #c8d8ff;
+            font-style: italic;
+        }
+
+        .mission {
+            margin-top: 15px;
+            font-size: 1.05rem;
+            color: #ffd166;
+        }
+
+        .profile-card {
+            max-width: 600px;
+            margin: 25px auto;
+            background: rgba(0, 0, 0, .45);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 18px 24px;
+            border: 1px solid rgba(255, 255, 255, .12);
+        }
+
+        .profile-card h2 {
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-size: 1.2rem;
+        }
+
+        .profile-card p {
+            color: #dce8ff;
+            line-height: 1.7;
+        }
+
+        .news {
+            max-width: 800px;
+            margin: 35px auto;
+            background: rgba(0, 0, 0, .45);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 20px;
+            padding: 25px;
+        }
+
+        .news h3 {
+            color: #ff6b6b;
+            margin-bottom: 12px;
+        }
+
+        .movie-title {
+            margin-top: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #79b7ff;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 18px 40px;
+            background: #cf2027;
+            color: white;
+            text-decoration: none;
+            border-radius: 60px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(207, 32, 39, .5);
+        }
+
+        .footer {
+            margin-top: 40px;
+            opacity: .95;
+            line-height: 1.8;
+            font-size: .95rem;
+        }
+
+        @media(max-width:768px) {
+
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            .spider {
+                font-size: 70px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .profile-card p {
+                font-size: .95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
+    <div class="particle p6"></div>
+    <div class="particle p7"></div>
+    <div class="particle p8"></div>
+
+    <div class="container">
+
+        <!-- <div class="breaking">
+            🚨 DAILY BUGLE EXCLUSIVE • SPIDER-MAN TURNS 23 TODAY 🚨
+        </div> -->
+        <h1>
+            THANK YOU FOR WISHING<br>
+            SPIDER-MAN A HAPPY<br>
+            23RD BIRTHDAY!
+        </h1>
+
+        <p class="subtitle">
+            Your friendly neighborhood Spider-Man appreciates every birthday wish.
+        </p>
+
+        <div class="badge">
+            🎂 LEVEL 23 UNLOCKED
+        </div>
+
+        <div class="hero-quote">
+            "The city is safe. The villains are defeated.
+            The cake has arrived.
+            Spider-Man is officially Level 23."
+        </div>
+
+        <div class="mission">
+            Mission Log #23 • Another year of protecting the city,
+            surviving deadlines, and swinging through life.
+        </div>
+
+        <div class="profile-card">
+            <h2>🕸️ STATUS REPORT #23</h2>
+
+            <p>
+                <strong>Age:</strong> 23 Years
+                &nbsp; • &nbsp;
+                <strong>Alias:</strong> Spider-Man
+                &nbsp; • &nbsp;
+                <strong>Status:</strong> Birthday Mode Activated
+            </p>
+        </div>
+
+        <div class="news">
+
+            <h3>🚨 DAILY BUGLE BREAKING NEWS 🚨</h3>
+
+            <p>
+                Spider-Man's latest adventure is arriving soon.
+            </p>
+
+            <div class="movie-title">
+                🎬 SPIDER-MAN: BRAND NEW DAY
+            </div>
+
+            <p style="margin-top:15px;">
+                As a birthday gift to me, go watch the newest Spider-Man movie and enjoy the experience.
+            </p>
+
+        </div>
+
+        <a class="btn" href="https://in.bookmyshow.com/movies/hyderabad/spiderman-brand-new-day/ET00447840"
+            target="_blank">
+            🎟️ BOOK TICKETS NOW
+        </a>
+
+        <div class="footer">
+            🕸️ EARTH-616 • MISSION #23 🕸️
+            <br><br>
+            Thank you for all the wishes ❤️
+            <br>
+            — Your Friendly Neighborhood Nithish Siliveru
+        </div>
+
+    </div>
+
+</body>
+
+</html>
